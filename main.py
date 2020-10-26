@@ -1,6 +1,6 @@
 file = open("liste_francais.txt", "r", encoding="UTF-8")
 
-letterList = ['v','o','t']
+letterList = ['e','o','t','u','r','a','n']
 accentE = ['é','è','ê']
 final = []
 
@@ -54,7 +54,7 @@ for word in file:
         for letter in word:
             tempL = accentRemover(letter)
             newWord = newWord+tempL
-        if(len(newWord)>=5):
+        if(len(newWord)>=0):
             final.append(newWord[:-1])
         print(word[:-1])
 file.close()
