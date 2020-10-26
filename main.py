@@ -1,6 +1,6 @@
 file = open("liste_francais.txt", "r", encoding="UTF-8")
 
-letterList = ['v','o','t','e','a','n']
+letterList = ['v','o','t']
 accentE = ['é','è','ê']
 final = []
 
