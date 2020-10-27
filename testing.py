@@ -15,5 +15,5 @@ def accentRemover(char):
         return char
 
 for letter in range(0,len(bible)):
-    if(ord(bible[letter])>=65 and ord(bible[letter])<=90):
-        print(bible[letter])
+    if(ord(bible[letter])>=65 and ord(bible[letter]<=90):
+        print(bible[letter+1])
