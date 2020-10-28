@@ -1,6 +1,6 @@
 file = open("liste_francais.txt", "r", encoding="UTF-8")
 
-letterList = ['v','o','t','e','a','n']
+letterList = ['p','d','o','v','e','t','i','s','r','u','n','a']
 accentE = ['é','è','ê']
 final = []
 
@@ -9,26 +9,28 @@ def accentRemover(char):
         return "e"
     elif char=="à":
         return "a"
+    elif char=="ï":
+        return "i"
     else:
         return char
 
 def nameFinder(mylist):
     for word in mylist:
-        if len(word)==5:
+        if len(word)==6:
             return word
-            break
+            breakd
 
 
 def export(mylist,factor):
-    if factor==0:
-        factor = 100000
+    factor = 100//factor
+    factorCounter=1
     count=0
     listCount=0
     name = nameFinder(mylist)
-    f = open(name+'.txt',"w+")
+    f = open('exos/'+name+'.txt',"w+")
     for i in mylist:
         listCount+=1
-        if not(listCount%factor==0):
+        if factorCounter==factor:
             count = count+len(i)+1
             if i==mylist[-1]:
                 f.write(i)
@@ -40,6 +42,9 @@ def export(mylist,factor):
                 elif count<60:
                     i = i+" "
                     f.write(i)
+            factorCounter=1
+        else:
+            factorCounter+=1
 
 validList = letterList.append('\n')
 
@@ -54,7 +59,7 @@ for word in file:
         for letter in word:
             tempL = accentRemover(letter)
             newWord = newWord+tempL
-        if(len(newWord)>=5):
+        if(len(newWord)>5):
             final.append(newWord[:-1])
         print(word[:-1])
 file.close()
@@ -62,5 +67,5 @@ print("---")
 final = sorted(final, key=len)
 final.reverse()
 print(final)
-export(final,0)
+export(final,100)
 print(nameFinder(final))
