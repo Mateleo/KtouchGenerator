@@ -1,6 +1,6 @@
 file = open("liste_francais.txt", "r", encoding="UTF-8")
 
-letterList = ['p','d','o','v','e','t','i','s','r','u','n','a']
+letterList = ['v','o','t','e']
 accentE = ['é','è','ê']
 final = []
 
@@ -11,12 +11,16 @@ def accentRemover(char):
         return "a"
     elif char=="ï":
         return "i"
+    elif char=="ö":
+        return "o"
+    elif char=="ô":
+        return "o"
     else:
         return char
 
 def nameFinder(mylist):
     for word in mylist:
-        if len(word)==6:
+        if len(word)==5:
             return word
             breakd
 
@@ -57,9 +61,9 @@ for word in file:
     if breaker!=0:
         newWord = ""
         for letter in word:
-            tempL = accentRemover(letter)
+            tempL = letter
             newWord = newWord+tempL
-        if(len(newWord)>5):
+        if(len(newWord)>3):
             final.append(newWord[:-1])
         print(word[:-1])
 file.close()

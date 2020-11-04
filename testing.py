@@ -27,5 +27,5 @@ for letter in range(0,len(bible)):
         fileToWrite.write(bible[letter])
     elif((ord(bible[letter])>=97 and ord(bible[letter])<=122) or (ord(bible[letter])==39) or (ord(bible[letter])==46) or (ord(bible[letter])>=224 and ord(bible[letter])<=255)): #lettre et tout le merdier
         fileToWrite.write(bible[letter])
-        
+
 fileToWrite.close()
